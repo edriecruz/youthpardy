@@ -1,0 +1,98 @@
+:root {
+    --bg: #0B0F3C; --bg-2: #070A2B; --cell: #131A6E; --cell-hover: #1B2494;
+    --gold: #F2C14E; --white: #FFFFFF; --muted: #8892C7; --accent: #5B7FFF;
+    --shadow: rgba(0,0,0,.35);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#0B0F3C; --bg-2:#070A2B; --cell:#131A6E; }
+  }
+  :root[data-theme="dark"] { --bg:#0B0F3C; --bg-2:#070A2B; --cell:#131A6E; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: inherit; }
+  body {
+    margin: 0; min-height: 100%; 
+    background: url('./img/PROGRAM\ FLOW\ CC2026.png') no-repeat center center fixed; background-size: cover;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--white); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding: 1.2rem 1rem 2rem;
+  }
+  h1 {
+    font-size: clamp(1.3rem, 4vw, 2rem); color: var(--gold); letter-spacing: .04em;
+    margin: .3rem 0 1rem; text-align: center;
+  }
+  .scoreboard {
+    display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 1.2rem; width: 100%; max-width: 980px;
+  }
+  .team {
+    background: var(--bg-2); border: 1px solid #232B7A; border-radius: 10px;
+    padding: .6rem .9rem; display: flex; flex-direction: column; align-items: center;
+    min-width: 140px; flex: 1 1 140px;
+  }
+  .team input[type="text"] {
+    background: transparent; 
+    border: none; 
+    color: var(--white); 
+    font-family: inherit;
+    font-size: .95rem; 
+    text-align: center; 
+    width: 100%; 
+    margin-bottom: .3rem;
+  }
+  .team input[type="text"]:focus { 
+    outline: 1px solid var(--accent); border-radius: 4px; }
+  .team .score { font-size: 1.6rem; font-weight: bold; color: var(--gold); }
+  .team .btnrow { display: flex; gap: .4rem; margin-top: .4rem; }
+  .team button {
+    font-family: Arial, sans-serif; font-size: .8rem; border: none; border-radius: 6px;
+    padding: .3rem .55rem; cursor: pointer; background: #232B7A; color: var(--white);
+  }
+  .team button:hover { background: var(--accent); }
+
+  .board {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;
+    width: 100%; max-width: 980px;
+  }
+  .cat {
+    background: var(--bg-2); color: var(--white); font-family: Arial, sans-serif;
+    font-size: clamp(.7rem, 1.6vw, .95rem); font-weight: bold; text-align: center;
+    padding: .6rem .3rem; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    min-height: 3.4em;
+  }
+  .cell {
+    background: var(--cell); color: var(--gold); font-family: Georgia, serif;
+    font-size: clamp(1rem, 3vw, 1.6rem); font-weight: bold; border: none; border-radius: 6px;
+    padding: 2.5rem .3rem; cursor: pointer; box-shadow: 0 2px 0 var(--shadow);
+  }
+  .cell:hover:not(:disabled) { background: var(--cell-hover); }
+  .cell:disabled { background: var(--bg-2); color: transparent; box-shadow: none; cursor: default; }
+
+  .hint { color: var(--muted); font-family: Arial, sans-serif; font-size: .8rem; margin-top: 1rem; text-align: center; }
+
+  .overlay {
+    position: fixed; inset: 0; background: rgba(3,5,25,.88);
+    display: none; align-items: center; justify-content: center; padding: 1.5rem; z-index: 10;
+  }
+  .overlay.open { display: flex; }
+  .modal {
+    background: var(--bg-2); border: 1px solid #232B7A; border-radius: 14px;
+    max-width: 640px; width: 100%; padding: 2rem 1.6rem; text-align: center;
+  }
+  .modal .tag { color: var(--gold); font-family: Arial, sans-serif; font-weight: bold; letter-spacing: .05em; margin-bottom: 1rem; }
+  .modal .question { font-size: clamp(1.1rem, 3vw, 1.5rem); margin-bottom: 1.4rem; line-height: 1.4; }
+  .modal .answer { font-size: clamp(1.3rem, 3.5vw, 1.8rem); color: var(--gold); font-weight: bold; margin: 1.2rem 0; display: none; }
+  .modal .answer.shown { display: block; }
+  .modal button.action {
+    font-family: Arial, sans-serif; font-size: 1rem; font-weight: bold; border: none;
+    border-radius: 8px; padding: .7rem 1.3rem; margin: .3rem; cursor: pointer;
+    background: var(--accent); color: var(--white);
+  }
+  .modal button.action:hover { filter: brightness(1.1); }
+  .award-row { display: none; flex-wrap: wrap; justify-content: center; margin-top: .8rem; }
+  .award-row.shown { display: flex; }
+  .modal button.close { background: transparent; color: var(--muted); text-decoration: underline; }
