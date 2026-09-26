@@ -1,31 +1,31 @@
-const CATEGORIES = ["SCIENCE", "HISTORY", "GEOGRAPHY", "POP CULTURE", "SPORTS"];
+const CATEGORIES = ["Reyal Or Fakeh", "Spot-ify", "ReCamp Review", "Dapat Alam Mo", "Kanta Haa?"];
 const POINTS = [1, 2, 3, 4];
 const DATA = {
-  "SCIENCE": [
+  "Reyal Or Fakeh": [
     { q: "Saint Francis of Assisi ang Founder ng Jesuits", a: "FALSE" },
     { q: "Ang full name ni Bro. Bo ay Eugenio R. Sanchez Jr.", a: "TRUE" },
     { q: "May anay ang room ng girls", a: "TRUE" },
     { q: "Si kuya James ang nag talk ng God chose you", a: "FALSE" },
   ],
-  "HISTORY": [
+  "Spot-ify": [
     { q: "I’ve tried it my way ‘til I understand, You write _______________ than I ever could.", a: "Better Stories" },
     { q: "You ‘re full of glory and power, Your mighty hand lifts me up when the world gives way Jesus My Lord, ___________.", a: "You Reign" },
     { q: "There is more to life, don’t have to blend in, no need to cave in, Jesus is the life ___________ and let the light in.", a: "Come out of hiding" },
     { q: "My soul magnifies the Lord, My spirit rejoices In God my Savior, For all the Might One has done My life will proclaim ________________.", a: "Holy is His Name" },
   ],
-  "GEOGRAPHY": [
+  "ReCamp Review": [
     { q: "🦑 sa campo de kusina, sinu-sino ang naghiwa ng ingredients?", a: "Bro. Joshua & Bro. Marshall" },
     { q: "🐶 anong pangalan ng golden retriever sa Phillip’s Sanctuary?", a: "Kairo" },
     { q: "💪 saan naitago ang mga wise/strongest member nung amazing race?", a: "Bro. Ron Ramossshhhh" },
     { q: "⛪ anong pangalan ng brother na kasama ni Fr. Jean Christopher?", a: "Bro. Mary David" },
   ],
-  "POP CULTURE": [
+  "Dapat Alam Mo": [
     { q: "anong mystery ng rosary ang dinadasal pag Thursday?", a: "Luminous Mystery" },
     { q: "anong pangalan ng field na pinaglaruan at kung saan bonfire?", a: "Marky BAKURAN" },
     { q: "ilang beads and meron sa isang rosary?", a: "59 beads" },
     { q: "sinong patron saint ang dinadasal pag nawawala ang bagay bagay?", a: "St. Anthony of Padua" },
   ],
-  "SPORTS": [
+  "Kanta Haa?": [
     { q: "anong most listened song ng feast worship?", a: "Never Fail" },
     { q: "anong ang kinakanta bago mag gospel?", a: "Alleluia" },
     { q: "anu-ano ang mga lenggwaheng nasa kantang tribes ng victory worship?", a: "English, Filipino, and Spanish" },
@@ -34,19 +34,19 @@ const DATA = {
 };
 
 const CATEGORY_ICONS = {
-  "SCIENCE": `<img src="./img/reyalorfakeh.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
-  "HISTORY": `<img src="./img/spotify.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
-  "GEOGRAPHY": `<img src="./img/recampreview.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
-  "POP CULTURE": `<img src="./img/dapatalammo.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
-  "SPORTS": `<img src="./img/kantaha.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
+  "Reyal Or Fakeh": `<img src="./img/reyalorfakeh.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
+  "Spot-ify": `<img src="./img/spotify.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
+  "ReCamp Review": `<img src="./img/recampreview.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
+  "Dapat Alam Mo": `<img src="./img/dapatalammo.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
+  "Kanta Haa?": `<img src="./img/kantaha.png" alt="Science Icon" style="width: 120px; height: auto;"><img/>`,
 };
 
 let teams = [
   { name: "Sky Bound", score: 0 },
   { name: "Golden Faith", score: 0 },
+  { name: "Jablee", score: 0 },
   { name: "Greeniation", score: 0 },
-  { name: "Yellow", score: 0 },
-  { name: "Orange", score: 0 },
+  { name: "Royal-Teas", score: 0 },
   { name: "Ca-campink", score: 0 },
 ];
 let used = {}; // key `${cat}-${p}` -> true once played
